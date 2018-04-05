@@ -4,6 +4,13 @@
 (global-visual-line-mode t)
 (desktop-save-mode 1)
 
+;; WINDOWS:
+(setq visible-bell 1)
+
+;; Autofill mode:
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
 ;; Make CMD the Meta key instead of Alt, so I can use alt to enter
 ;; special characters.
 (setq mac-command-modifier 'meta)
