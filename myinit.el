@@ -1,4 +1,5 @@
 ;; My Custom Shit:
+;; Add this to init.el to load it: (load-file "~/.emacs.v/myinit.el")
 
 (global-visual-line-mode t)
 (desktop-save-mode 1)
