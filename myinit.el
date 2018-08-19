@@ -17,7 +17,15 @@
 (setq mac-option-modifier nil)
 
 ;; Set my agenda files:
-(setq org-agenda-files (list "~/Dropbox/Org"))
+(cond ((eq system-type 'windows-nt)
+            (setq org-agenda-files (list "c:/Users/vweyde/Dropbox/Org"))
+       )
+      ((eq system-type 'darwin)
+            (setq org-agenda-files (list "~/Dropbox/Org"))
+       ))
+       
+
+
 
 ;; The following lines are always needed.  Choose your own keys.
 (global-set-key "\C-cl" 'org-store-link)
@@ -28,7 +36,7 @@
 ;; Other Shit
 (display-time-mode 1)
 (setq backup-directory-alist '(("." . "~/.emacs.v/backups")))
-
+(prefer-coding-system 'utf-8)
 
 ;; Moving windows naturally:
 (use-package windmove
