@@ -24,3 +24,18 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
+
+;; Other Shit
+(display-time-mode 1)
+(setq backup-directory-alist '(("." . "~/.emacs.v/backups")))
+
+
+;; Moving windows naturally:
+(use-package windmove
+  :bind
+  (("<f2> <right>" . windmove-right)
+   ("<f2> <left>" . windmove-left)
+   ("<f2> <up>" . windmove-up)
+   ("<f2> <down>" . windmove-down)
+   ))
+
