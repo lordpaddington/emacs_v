@@ -17,7 +17,7 @@
 (setq mac-option-modifier nil)
 
 ;; Set my agenda files:
-(setq org-agenda-files (list "~/OneDrive/Notes"))
+(setq org-agenda-files (list "~/Dropbox/Org"))
 
 ;; The following lines are always needed.  Choose your own keys.
 (global-set-key "\C-cl" 'org-store-link)
