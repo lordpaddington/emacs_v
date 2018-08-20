@@ -54,7 +54,6 @@
 (defvar notepad (expand-file-name "Notepad.org" orgpath))
 (defvar todo (expand-file-name "Todo.org" orgpath))
 
-
 (setq org-capture-templates
       '(
         ("t" "Todo" entry (file+headline todo "Tasks:")
@@ -63,4 +62,3 @@
          "* %U %?\n ")
         )
       )
-
