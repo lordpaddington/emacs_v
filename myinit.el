@@ -16,15 +16,18 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
-;; Set my agenda files:
+;; Platform dependent Dropbox Path:
 (cond ((eq system-type 'windows-nt)
-            (setq org-agenda-files (list "c:/Users/vweyde/Dropbox/Org"))
+       (defvar homepath "C:/Users/vweyde")
        )
       ((eq system-type 'darwin)
-            (setq org-agenda-files (list "~/Dropbox/Org"))
+       (defvar homepath "~")
        ))
-       
 
+(defvar orgpath (expand-file-name "Dropbox/Org" homepath))
+
+;; Set my agenda files:
+(setq org-agenda-files (list orgpath))
 
 
 ;; The following lines are always needed.  Choose your own keys.
@@ -46,4 +49,18 @@
    ("<f2> <up>" . windmove-up)
    ("<f2> <down>" . windmove-down)
    ))
+
+;; Capture Templates
+(defvar notepad (expand-file-name "Notepad.org" orgpath))
+(defvar todo (expand-file-name "Todo.org" orgpath))
+
+
+(setq org-capture-templates
+      '(
+        ("t" "Todo" entry (file+headline todo "Tasks:")
+         "* TODO %?\n")
+        ("n" "Note" entry (file notepad)
+         "* %U %?\n ")
+        )
+      )
 
