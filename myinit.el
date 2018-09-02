@@ -54,11 +54,16 @@
 (defvar notepad (expand-file-name "Notepad.org" orgpath))
 (defvar todo (expand-file-name "Todo.org" orgpath))
 
+
 (setq org-capture-templates
       '(
         ("t" "Todo" entry (file+headline todo "Tasks:")
          "* TODO %?\n")
         ("n" "Note" entry (file notepad)
          "* %U %?\n ")
-        )
+        ("a" "Action item" entry (file+headline (lambda() (buffer-file-name)) "Actions:")
+         "* TODO %?\n")
+
+       )
       )
+
